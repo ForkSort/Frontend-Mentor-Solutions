@@ -12,7 +12,7 @@ This is my solution to the [NFT preview card component challenge on Frontend Men
 
 ## Overview
 
-I used grid to position the elements inside the <main>, and flexbox for the "price" and "timeleft" elements. I tried using list-style-image as bullet for li-elements, but css doesn't allow to change their position (see why here: https://stackoverflow.com/questions/1708833/adjust-list-style-image-position), the solution was to use background-images instead of li-bullets. 
+I used grid to position the elements inside the <main>, and flexbox for the "price" and "timeleft" elements. I tried using list-style-image as bullet for li-elements, but css doesn't allow to change their position (see why here: https://stackoverflow.com/questions/1708833/adjust-list-style-image-position), the solution was to use background-images instead of li-bullets. For the hover/focus state on the preview-image, i ended up using 2 elements (a div with a bkg-image and an image element for the icon), then on hover i used z-index to make the icon appear and background-color/opacity change.
 
 ### Screenshot
 ![Screen Shot 2022-02-04 at 13 16 29](https://user-images.githubusercontent.com/95124571/152527742-92bde38e-45de-47eb-bb34-7b190b1cc212.png)
