@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet"> 
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Frontend Mentor | NFT preview card component</title>
+    <style>
+    * {
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Outfit', sans-serif;
+        background-color: hsl(217, 54%, 11%);
+        color: hsl(220, 15%, 55%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    main {
+        border-radius: 1rem;
+        background-color: hsl(216, 50%, 16%);
+        max-width: 325px;
+        padding: 1.5rem;
+        box-shadow: rgba(0, 0, 0, 0.025) 0px 0px 10px;
+        display: grid;
+        gap: 1rem;
+
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1.5em 1em 0.75em, rgba(0, 0, 0, 0.05) 0px 2em 1em 3em;
+    }
+    img.nft-preview {
+        width: 20%;
+        z-index: -1;
+    }
+    .nft-preview-container {
+        border-radius: 0.5rem;
+        background: url("images/image-equilibrium.jpg") no-repeat;
+        background-size: cover;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: unset;
+    }
+    .nft-preview-container:hover,
+    .nft-preview-container:focus {
+        background: linear-gradient(hsla(178, 100%, 50%, 0.5), hsla(178, 100%, 50%, 0.5)), url("images/image-equilibrium.jpg") no-repeat; 
+        background-size: cover;
+        cursor: pointer;
+        z-index: 0;
+    }
+    img.avatar {
+        margin: 0;
+        width: 2.125rem;
+        border: 2px solid hsl(220, 15%, 55%);
+        border-radius: 50%;
+    }
+    h1 {
+        margin: 0.5rem 0 0;
+        color: inherit;
+        font-size: 22px;
+    }
+    p {
+        color: hsl(215, 51%, 70%);
+        font-size: 18px;
+        letter-spacing: -0.675pt;
+        margin: -2px -2px 2px;
+    }
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 0 1em;
+        letter-spacing: -0.2pt;
+        border-bottom: 1px solid;
+    }
+    li.price {
+        background: transparent url("images/icon-ethereum.svg") no-repeat scroll 0% 50%;
+        list-style-type: none;
+        padding-left: 1rem;
+        margin: 0;
+        color: hsl(178, 100%, 50%);
+    }
+    li.time-left {
+        background: transparent url("images/icon-clock.svg") no-repeat scroll 0% 50%;
+        list-style-type: none;
+        margin: 0px;
+        padding-left: 1.5rem;
+    }
+    .author {
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+    .author p {
+        font-size: 16px;
+        letter-spacing: -0.25pt;
+        margin: 0 0 0 0.8rem;
+    }
+    a {
+        margin: 0;
+        color: hsl(212, 45%, 89%);
+        text-decoration: none;
+    }
+    a:hover,
+    a:focus {
+        color:hsl(178, 100%, 50%);
+    }
+    
+    @media (min-width: 1440px) {
+        main {
+            min-width: 24vw;
+            aspect-ratio: 1 / 1.71875;
+        }
+        p {
+            letter-spacing: unset;
+        }
+        
+    }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="nft-preview-container" aria-label="Image of the equilibrium NFT"><img src="images/icon-view.svg" class="nft-preview" alt="Image of the equilibrium NFT"></div>
+        <a href="#"><h1>Equilibrium #3429</h1></a>
+
+        <p>Our Equilibrium collection promotes balance and calm.</p>
+        <ul>
+            <li class="price">0.041 ETH</li>
+            <li class="time-left">3 days left</li>
+        </ul>
+        <div class="author">
+            <img src="images/image-avatar.png" class="avatar" alt="Jules Wyvern's avatar photo"><p>Creation of <a href="#">Jules Wyvern</a></p>
+        </div>
+    </main>
+</body>
+</html>
