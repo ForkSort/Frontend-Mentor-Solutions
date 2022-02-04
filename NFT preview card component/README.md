@@ -20,7 +20,7 @@ I used grid to position the elements inside the <main>, and flexbox for the "pri
 
 ### Demo
 
-- Solution URL: [See solution @ FrontendMentor](https://www.frontendmentor.io/solutions/basic-solution-mhdh1dPS2)
+- Solution URL: [See solution @ FrontendMentor](https://www.frontendmentor.io/solutions/nft-preview-card-using-grid-and-flexbox-eBXqhqaI2)
 - Live Site URL: [Click to open](https://forksort.github.io/Frontend-Mentor-Solutions/NFT%20preview%20card%20component/)
 
 ### Built with
