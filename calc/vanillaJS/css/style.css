@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+}
+:root {
+    --bg-main: #000;
+}
+html {
+    font-family: 'Spartan', sans-serif;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+body { 
+    color: var(--text-screen);
+    background-color: var(--bg-main);
+}
+h1 {
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 2rem;
+}
+header > fieldset {
+    border: none;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas: 
+        ". theme1-label theme2-label theme3-label"
+        "title theme-btn-bkg theme-btn-bkg theme-btn-bkg";
+    text-align: center;
+    font-size: 0.75rem;
+    padding: 0;
+    row-gap: 0.25rem;
+}
+#theme1-label { grid-area: theme1-label }
+#theme2-label { grid-area: theme2-label }
+#theme3-label { grid-area: theme3-label }
+
+header .theme { 
+    grid-area: title;
+    margin-right: 2.5em;
+    font-size: 0.75rem;
+    margin: 0 2em 0;
+    padding: 0;
+}
+.theme-btn-bkg { 
+    grid-area: theme-btn-bkg;
+    background-color: var(--bg-keypad);
+    display: flex;
+    border-radius: 1rem;
+    border: 4px solid var(--bg-keypad);
+    gap: 0.25rem;
+}
+.theme-btn-bkg > input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    display: block;
+    width: 1rem;
+    aspect-ratio: 1;
+    margin: 0.1rem;
+    border-radius: 50%;
+}
+.theme-btn-bkg > input[type="radio"]:checked { background-color: var(--key-equals-bg) }
+
+.screen {
+    font-family: inherit;
+    color: var(--text-alt);
+    font-size: 3rem;
+    border: none;
+    background-color: var(--bg-screen);
+    border-radius: 0.5rem;
+    margin: 0.5em 0;
+    text-align: right;
+    padding: 0.75em;
+    width: 100%;
+    display: block;
+    letter-spacing: -0.7pt;
+}
+.screen:hover, 
+.screen:active,
+.screen:focus {
+    outline: 2px solid var(--key-equals-bg);
+}
+.screen::placeholder {
+    font-size: 1.5rem;
+    color: var(--text-alt2);
+}
+.keys {
+    background-color: var(--bg-keypad);
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0.7425em;
+    padding: 1em;
+    text-align: center;
+    font-size: 2rem;
+}
+.keys > * {
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--text-buttonsalt2);
+    background-color: var(--keys-bg);
+    border-bottom-color: var(--keys-shadow);
+    border: none;
+    border-bottom: 4px solid;
+    border-radius: 0.5rem;
+    padding: 0.35em 1.2em;
+}
+.keys > button:hover,
+.keys > button:active,
+.keys > button:focus {
+    border-bottom: none;
+}
+.key__del,
+.key__reset {
+    font-size: 1.25rem;
+    color: var(--text-buttonsalt1);
+    background-color: var(--key-del-bg);
+    border-bottom-color: var(--key-del-shadow);
+}
+.key__reset {        
+    padding: 0.9em;
+    grid-column: 1 / 3;
+}
+.key__equals {
+    font-size: 1.25rem;
+    color: var(--text-buttonsalt3);
+    background-color: var(--key-equals-bg);
+    border-bottom-color: var(--key-equals-shadow);
+    padding: 0.9em;
+    grid-column: 3 / 5;
+}
+@media (max-width: 600px) {
+    .screen              { font-size: clamp(2rem, 8vw, 3rem) }
+    .screen::placeholder { font-size: 1rem }
+    .keys                { gap: 0.375em }
+
+    .keys > * {
+        font-size: 1.75rem;
+        padding: 0.5em clamp(0.725em, 5vw, 1em);
+    }
+    .key__del,
+    .key__reset,
+    .key__equals {
+        font-size: 1rem;
+        padding: 1.25em 0.75em;
+    }
+}
+.theme1 {
+    --bg-main: hsl(222, 26%, 31%);
+    --bg-keypad: hsl(223, 31%, 20%);
+    --bg-screen: hsl(224, 36%, 15%);
+    --key-del-bg: hsl(225, 21%, 49%);
+    --key-del-shadow: hsl(224, 28%, 35%);
+    --key-equals-bg: hsl(6, 63%, 50%);
+    --key-equals-shadow: hsl(6, 70%, 34%);
+    --keys-bg: hsl(30, 25%, 89%);
+    --keys-shadow: hsl(28, 16%, 65%);
+    --text-main: hsl(221, 14%, 31%);
+    --text-screen: hsl(0, 0%, 100%);
+    --text-buttonsalt1: var(--text-screen);
+    --text-buttonsalt2: var(--text-main);
+    --text-buttonsalt3: var(--text-screen);
+}
+.theme2 {
+    --bg-main: hsl(0, 0%, 90%);
+    --bg-keypad: hsl(0, 5%, 81%);
+    --bg-screen: hsl(0, 0%, 93%);
+    --key-del-bg: hsl(185, 42%, 37%);
+    --key-del-shadow: hsl(185, 58%, 25%);
+    --key-equals-bg: hsl(25, 98%, 40%);
+    --key-equals-shadow: hsl(25, 99%, 27%);
+    --keys-bg: hsl(45, 7%, 89%);
+    --keys-shadow: hsl(35, 11%, 61%);
+    --text-main: hsl(60, 10%, 19%);
+    --text-screen: var(--text-main);
+    --text-buttonsalt1: hsl(0, 0%, 100%);
+    --text-buttonsalt2: var(--text-main);
+    --text-buttonsalt3: var(--text-buttonsalt1);
+}
+.theme3 {
+    --bg-main: hsl(268, 75%, 9%);
+    --bg-keypad: hsl(268, 71%, 12%);
+    --bg-screen: var(--bg-keypad);
+    --key-del-bg: hsl(281, 89%, 26%);
+    --key-del-shadow: hsl(285, 91%, 52%);
+    --key-equals-bg: hsl(176, 100%, 44%);
+    --key-equals-shadow: hsl(177, 92%, 70%);
+    --keys-bg: hsl(268, 47%, 21%);
+    --keys-shadow: hsl(290, 70%, 36%);
+    --text-main: hsl(198, 20%, 13%);
+    --text-screen: hsl(52, 100%, 62%);
+    --text-buttonsalt1: hsl(0, 0%, 100%);
+    --text-buttonsalt2: var(--text-screen);
+    --text-buttonsalt3: var(--text-main);
+}
